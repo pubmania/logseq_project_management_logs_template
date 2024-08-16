@@ -1,7 +1,6 @@
 tags:: project page
 icon:: 📂
 
--
 - ## Project Meta
   collapsed:: true
 	- DOING [#B] #project [[Travel]]
