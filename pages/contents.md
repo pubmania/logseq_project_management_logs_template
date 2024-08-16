@@ -1,4 +1,4 @@
-query-properties:: [:icon :page :updated-at]
+- query-properties:: [:icon :page :updated-at]
   #+BEGIN_QUERY
   {:title [:h1 "⏳ Ongoing Projects"]
     :query [:find (pull ?page [*])
