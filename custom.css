@@ -1,0 +1,366 @@
+/*Theme*/
+@import url('https://playerofgames.github.io/logseq-mia-theme/mia_quattro.css');
+
+/* Override tag and note color scheme for tags from mia_quattro theme  */
+a.tag{
+ font-size: 100%;
+ color: var(--lx-accent-11,var(--ls-tag-text-color,hsl(var(--primary))));
+}
+
+svg.note {
+   color: var(--lx-accent-11, var(--rx-yellow-08))
+}
+
+svg.tip {
+   color: var(--lx-accent-11,var(--rx-blue-08))
+}
+
+/* Selection lists (search, tag complete, etc.) */
+
+#ui__ac .chosen,
+.chosen {
+	--ls-primary-text-color: #ee0606;
+	--ls-link-ref-text-color: #eaeaea;
+	--ls-link-ref-text-hover-color: #fafafa;
+	--ls-quaternary-background-color: var(--accent-dark-color);
+	--ls-icon-color: var(--ls-primary-text-color);
+}
+
+#ui__ac .chosen {
+	background-color: var(--accent-dark-color);
+}
+
+.menu-link.chosen  {
+	color: var(--ls-primary-text-color) !important;
+}
+
+/* to make todo checkbox visible */
+.form-checkbox {
+	--ls-page-checkbox-border-color: var(--accent-color);
+
+	border: 1px solid var(--ls-page-checkbox-border-color);
+	border-radius: 5px;
+	opacity: 1;
+}
+/* blockquote tweaks (reduce margin & padding and add custom colours) */
+
+blockquote {
+ padding: 8px 12px;
+ border-left: 5px solid;
+ border-left-color: var(--ls-page-blockquote-border-color, #7cfc00);
+ margin: 0.3rem 0 !important;
+}
+
+blockquote.yellow {
+ border-left-color: #ffe85580;
+}
+
+blockquote.blue {
+ border-left-color: #84b5ff80;
+}
+
+blockquote.red {
+ border-left-color: #ff558280;
+}
+
+.ls-block[data-refs-self^=".blue"] .blockquote{
+ border-left-color: #84b5ff80;
+}
+
+/* ==mark==  tweaks */
+
+mark {
+  background: var(--ls-page-mark-bg-color);
+  color: var(--ls-page-mark-color);
+  padding: 1px 2px;
+  margin: 0 2px;
+  border-radius: 3px;
+}
+
+mark.yellow {
+  background: var(--ls-page-mark-bg-color);
+  color: var(--ls-page-mark-color);
+}
+
+mark.pink {
+  background-color: #ff89be80;
+  color: white;
+}
+
+mark.blue {
+  background-color: #84b5ff80;
+  color:white;
+}
+
+mark.green {
+  background-color: #97ff9780;
+  color: yellow;
+}
+
+mark.red {
+  background-color: #ff558280;
+  color: white;
+}
+
+mark.grey {
+  background-color: #80808080;
+  color: white;
+}
+
+mark.gray {
+  background-color: #80808080;
+  color: white;
+}
+
+mark.orange {
+  background-color: #ffb86c80;
+  color: white;
+}
+
+mark.purple {
+  background-color: #c097ff80;
+  color: white;
+}
+
+/* add traffic lights to prioritized tasks */
+
+.priority[href="#/page/A" i]::before {
+ content: "🔴";
+ margin-right: 2px;
+}
+
+.priority[href="#/page/B" i]::before {
+ content: "🟡";
+ margin-right: 2px;
+}
+
+.priority[href="#/page/C" i]::before {
+ content: "🟢";
+ margin-right: 2px;
+}
+
+.opacity-50 {
+ opacity: 1;
+}
+
+/* -- like dislike ----------------------------------------- */
+
+.ls-block[data-refs-self*="pros"] .block-children .bullet-container .bullet {
+ display: none;
+}
+
+.ls-block[data-refs-self*="pros"] .block-children .bullet-container:after {
+ content: "+";
+ font-size: 20px;
+ color: #1cd41c;
+}
+
+.ls-block[data-refs-self*="cons"] .block-children .bullet-container:after {
+ content: "-";
+ color: red;
+}
+
+a.tag[data-ref*="pros"] {
+ font-size: .8rem;
+ background: #014935e0;
+ color: rgb(202, 247, 118);
+ padding: 0 6px 3px;
+ border-radius: var(--ls-border-radius-low);
+ border: 1px solid rgba(137, 207, 96, 0.925);
+}
+
+a.tag[data-ref*="cons"] {
+ font-size: 13px;
+ background: #4b033bda;
+ color: rgb(255, 116, 128);
+ padding: 0 6px 3px;
+ border-radius: var(--ls-border-radius-low);
+ border: 1px solid rgba(182, 13, 41, 0.925);
+}
+
+a.tag[data-ref*="pros"]:hover {
+ filter: contrast(2) brightness(10);
+}
+
+a.tag[data-ref*="pros"]:before {
+ content: "✅ ";
+ font-size: 13px
+}
+
+a.tag[data-ref*="cons"]:before {
+ content: "❌ ";
+ font-size: 13px
+}
+
+
+a.tag[data-ref*="red"]:before {
+ content: "🔴";
+ margin-right: 2px;
+}
+
+a.tag[data-ref*="amber"]:before {
+ content: "🟠";
+ margin-right: 2px;
+}
+
+a.tag[data-ref*="green"]:before {
+ content: "🟢";
+ margin-right: 2px;
+}
+
+a.tag[data-ref*="on-hold"]:before {
+ content: "🟣";
+ margin-right: 2px;
+}
+
+a.tag[data-ref*="yellow"]:before {
+ content: "🟡";
+ margin-right: 2px;
+}
+
+a.tag[data-ref*="closed"]:before {
+ content: "🔵";
+ margin-right: 2px;
+}
+
+a.tag[data-ref*="no-go"]:before {
+ content: "🚫";
+ margin-right: 2px;
+}
+
+a.tag[data-ref*="merged"]:before {
+ content: "⚪";
+ margin-right: 2px;
+}
+
+/* -------------------------------- like dislike end  ------ */
+
+/*===========================================================*/
+/* css columns view / kanban  v20220510--------------------- */
+/* use: inline tag #kanban, #kanban-small or #kanban-wXXX    */
+/* try:  #kanban-w200,#kanban-w300, #kanban-w400             */
+
+div[data-refs-self*="kanban"]>.block-children-container.flex {
+    width: 100%;
+}
+
+div[data-refs-self*="kanban"]>.block-children-container.flex>.block-children.w-full {
+    display: inline-flex;
+    position: relative;
+    overflow-x: auto !important;
+    overflow-y: hidden;
+    margin: 0 10px;
+}
+	  
+div[data-refs-self*="kanban"]>.block-children-container.flex>.block-children.w-full>div.ls-block {
+    display: inline-block;
+    padding: 0;
+    width: inherit;
+    min-width: 200px;
+    margin-right: 10px;
+}
+	  
+/* wide */
+
+div[data-refs-self*="kanban-small"]>.block-children-container.flex>.block-children,
+div[data-refs-self*="kanban-wide"]>.block-children-container.flex>.block-children {
+   min-width: 90vw;
+   left: 50%;
+   transform: translate(-50%);
+   background-color: var(--ls-primary-background-color);
+   overflow-x: scroll !important;
+   overflow-y: hidden;
+   margin: 10px 30px;
+}
+
+div[data-refs-self*="kanban-wide"]>.block-children-container.flex>.block-children>div.ls-block {
+   display: inline-block;
+   min-width: 350px;
+   padding: 8px 0px !important;
+   font-size: 0.85rem;
+   margin: 5px 0px;
+   background-color: var(--ls-secondary-background-color);
+   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+   border-radius: var(--ls-border-radius-medium);
+}
+
+
+/* #kanbansmall : smaller font with hover zoom */
+
+div[data-refs-self*="kanban-small"]>.block-children-container.flex>.block-children>div.ls-block {
+   display: inline-block;
+   min-width: 350px;
+}
+
+div[data-refs-self*="kanban-small"]>.block-children-container.flex>.block-children .block-content {
+   font-size: 10px;
+   font-weight: 300;
+}
+
+div[data-refs-self*="kanban-small"]>.block-children-container.flex>.block-children .block-content:hover {
+   font-size: 14px !important;
+   min-width: 100px;
+}
+
+
+/* #kanban-w[100-300] : force width of the columns */
+
+div[data-refs-self*="kanban-w100"]>.block-children-container.flex>.block-children.w-full>div.ls-block {
+   min-width: 100px;
+}
+
+div[data-refs-self*="kanban-w150"]>.block-children-container.flex>.block-children.w-full>div.ls-block {
+   min-width: 150px;
+}
+
+div[data-refs-self*="kanban-w200"]>.block-children-container.flex>.block-children.w-full>div.ls-block {
+   min-width: 200px;
+}
+div[data-refs-self*="kanban-w300"]>.block-children-container.flex>.block-children.w-full>div.ls-block {
+   min-width: 300px;
+}
+div[data-refs-self*="kanban-w400"]>.block-children-container.flex>.block-children.w-full>div.ls-block {
+   min-width: 400px;
+}
+div[data-refs-self*="kanban-fit"]>.block-children-container.flex>.block-children.w-full>div.ls-block {
+   min-width: 400px;
+       width: max-content; 
+}
+
+/* remove left border for kanbanized */
+[data-refs-self*="kanban"] .block-children-left-border {
+   opacity: 0;
+}
+
+/* fix modal list not appearing*/
+.block-children {
+   overflow: visible !important;
+} 
+
+.ls-block[data-refs-self*="kanban"] .absolute-modal,
+.ls-block[data-refs-self*="kanban"] #ui__ac {
+   min-height: 80px;
+}
+           
+/*--------------------------------------------- kanban end-- */
+
+/*------------------expreimetal for better table view START-------------------*/
+.table-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+table td {
+    min-width:100px;
+    word-wrap:break-word;
+}
+
+
+table th {
+    word-break: keep-all;
+}
+/*------------------expreimetal for better table view END-------------------*/
+
+/* css from missing commands plugin */
+.ls-block[data-refs-self*='".tabular"']>.block-main-container>.block-content-wrapper>div>div>.block-content>.block-content-inner>div>:is(h1,h2){border-bottom:none;margin:0;padding:0}@keyframes hideAnimation{to{display:none}}.ls-block[data-refs-self*='".tabular0"']>.block-main-container{animation:hideAnimation 0s forwards;animation-delay:1s}.ls-block[data-refs-self*='".tabular0"'].selected>.block-main-container,.ls-block[data-refs-self*='".tabular0"']>.block-main-container:hover,.ls-block[data-refs-self*='".tabular0"']>.block-main-container:has(>.editor-wrapper),.ls-block[data-refs-self*='".tabular0"']>.block-main-container:has(+.block-children-container>.block-children-left-border:hover){display:flex;animation:none}.ls-block[data-refs-self*='".tabular0"']>.block-children-container{margin-left:0}.ls-block[data-refs-self*='".tabular']>.block-children-container>.block-children{border-left:0px;display:flex;flex-direction:column}.ls-block[data-refs-self*='".tabular']>.block-children-container>.block-children>.ls-block:first-child{border-top:1px solid var(--ls-guideline-color)}.ls-block[data-refs-self*='".tabular']>.block-children-container>.block-children>.ls-block{display:flex;border-bottom:1px solid var(--ls-guideline-color);padding:0;flex-grow:1;width:100%}.ls-block[data-refs-self*='".tabular']>.block-children-container>.block-children>.ls-block>.block-main-container{padding:2px 0}.ls-block[data-refs-self*='".tabular']>.block-children-container>.block-children>.ls-block>.block-main-container.items-baseline{align-items:center}.ls-block[data-refs-self*='".tabular']>.block-children-container>.block-children>.ls-block>.block-main-container>.block-content-wrapper>div>div>.block-content>.block-content-inner{font-weight:500}.ls-block[data-refs-self*='".tabular']>.block-children-container>.block-children>.ls-block>.block-main-container>.block-content-wrapper>div>div>.block-content>.block-content-inner,.ls-block[data-refs-self*='".tabular']>.block-children-container>.block-children>.ls-block>.block-main-container>.block-content-wrapper>div>div>.block-content>.block-body,.ls-block[data-refs-self*='".tabular']>.block-children-container>.block-children>.ls-block>.block-main-container>.editor-wrapper>.editor-inner{min-width:165px;max-width:165px}.ls-block[data-refs-self*='".tabular']>.block-children-container>.block-children>.ls-block>.block-main-container>.block-content-wrapper>div>div>.block-content>.block-body{font-size:85%;opacity:.7;font-weight:400}.ls-block[data-refs-self*='".tabular']>.block-children-container>.block-children>.ls-block>.block-main-container>.block-content-wrapper .page-reference .bracket{display:none}.ls-block[data-refs-self*='".tabular']>.block-children-container>.block-children>.ls-block>.block-children-container{margin-left:0;width:100%}.ls-block[data-refs-self*='".tabular']>.block-children-container>.block-children>.ls-block>.block-children-container>.block-children{padding-bottom:10px}.ls-block[data-refs-self*='".tabular']>.block-children-container>.block-children>.ls-block[data-refs-self*='".tabular']>.block-children-container>.block-children{border-left:1px solid var(--ls-guideline-color);padding-top:0;padding-bottom:0}.ls-block[data-refs-self*='".tabular']>.block-children-container>.block-children>.ls-block[data-refs-self*='".tabular']>.block-children-container>.block-children>.ls-block:first-child{border-top:0px}.ls-block[data-refs-self*='".tabular']>.block-children-container>.block-children>.ls-block[data-refs-self*='".tabular']>.block-children-container>.block-children>.ls-block:last-child{margin-bottom:-1px;border-bottom:0px}.ls-block[data-refs-self*='".tabular']>.block-children-container>.block-children>.ls-block[data-refs-self*='".tabular']>.block-children-container>.block-children>.ls-block>.block-main-container>.block-content-wrapper>div>div>.block-content>.block-content-inner,.ls-block[data-refs-self*='".tabular']>.block-children-container>.block-children>.ls-block[data-refs-self*='".tabular']>.block-children-container>.block-children>.ls-block>.block-main-container>.block-content-wrapper>div>div>.block-content>.block-body,.ls-block[data-refs-self*='".tabular']>.block-children-container>.block-children>.ls-block[data-refs-self*='".tabular']>.block-children-container>.block-children>.ls-block>.block-main-container>.editor-wrapper>.editor-inner{min-width:115px;max-width:115px}.ls-block[data-refs-self*='".tabular']>.block-children-container>.block-children>.ls-block[data-refs-self*='".tabular']>.block-children-container>.block-children>.ls-block>.block-children-container>.block-children{padding-bottom:7px}.ls-block[data-refs-self*='".tabular']>.block-children-container>.block-children>.ls-block[data-refs-self*='".tabular0"']>.block-main-container{animation:none;border-right:1px solid var(--ls-guideline-color)}.ls-block[data-refs-self*='".tabular']>.block-children-container>.block-children>.ls-block[data-refs-self*='".tabular0"']>.block-children-container{margin-left:-1px}.ls-block[data-refs-self*='".tabular']>.block-children-container>.block-children>.ls-block[data-refs-self*='".tabular0"']>.block-children-container>.block-children-left-border{display:none}.ls-block[data-refs-self*='".tabular']>.block-children-container>.block-children>.ls-block[data-refs-self*='".tabular0"']>.block-children-container>.block-children{border-left:0px}.ls-block[data-refs-self*='".tabular']>.block-children-container>.block-children>.ls-block[data-refs-self*='".tabular0"']>.block-children-container>.block-children>.ls-block>.block-main-container{display:none}
+a.tag[data-ref^="."]:before{content:"…";font-size:.7rem;line-height:1rem}a.tag[data-ref^="."]:hover:before{content:"";padding-right:.7rem}a.tag[data-ref^="."]:hover{line-height:1.3rem;font-size:1rem!important;transition:0s;color:var(--ls-primary-text-color)!important;border:1px solid var(--ls-primary-text-color)}a.tag[data-ref^="."]{font-family:monospace;font-size:0px!important;transition:0s;color:var(--ls-primary-text-color)!important;background-color:unset!important;border:none;border-radius:3px;padding:0 2px}
